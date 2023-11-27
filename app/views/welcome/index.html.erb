@@ -1,0 +1,15 @@
+<h1>Welcome to hello-rails-react!</h1>
+<p id="random-greeting"></p>
+
+<div id="root"></div>
+
+<script src="/packs/application.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    fetch('/greetings/random')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('random-greeting').innerText = data.greeting;
+      });
+  });
+</script>
